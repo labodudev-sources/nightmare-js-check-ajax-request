@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>NightmareJS vérifier les requetes AJAX. Copyright Jimmy Latour (http://labodudev.fr)</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script>
+		$(document).ready(function() {
+			$('input[type="submit"]').on('click', function() {
+				$.post('ajax.php', { age: jQuery('input[type="text"]').val() });
+			});
+		});
+	</script>
+</head>
+<body>
+	<h2>A basic form with NightmareJS</h2>
+	<label>How old are you ?
+		<input type="text" />
+	</label>
+
+	<input type="submit" />
+</body>
+</html>
