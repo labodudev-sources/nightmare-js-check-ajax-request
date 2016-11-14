@@ -12,7 +12,7 @@ var nightmare = Nightmare({
 
 nightmare
   .goto('http://127.0.0.1/nightmare-js-check-ajax-request/')
-  .type('input[type="text"]', "toto")
+  .type('input[type="text"]', "This input is not a number :)")
   .click('input[type="submit"]')
   .wait(function() {
     if (window.currentRequestResponse) {
@@ -23,7 +23,12 @@ nightmare
     return window.currentRequestResponse;
   })
   .then(function(response) {
-    console.log(response);
+    if (isNaN(response)) {
+		console.error('It\'s not a number!');
+	}
+	else {
+		console.log('It\'s a number');
+	}
   })
   .catch(function(error) {
     console.log(error);
