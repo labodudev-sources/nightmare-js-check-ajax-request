@@ -3,10 +3,8 @@ var path = require('path');
 
 var nightmare = Nightmare({
   show: true,
-  typeInterval: 1,
   webPreferences: {
-    preload: path.resolve("xhr.js"),
-    partition: 'nopersist'
+    preload: path.resolve("xhr.js")
   }
 });
 
